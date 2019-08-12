@@ -1,0 +1,21 @@
+/*!
+ * Custom style file
+ */
+ .account-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+.account-form {
+    width: 340px;
+    margin: 50px auto;
+}
+
+.content {
+    min-height: 250px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}

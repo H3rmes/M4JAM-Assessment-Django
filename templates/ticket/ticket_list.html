@@ -1,0 +1,36 @@
+<!-- Dashboard page -->
+{% extends "base.html" %}
+
+<!-- Page Title-->
+{% block title %}Ticket List{% endblock %}
+
+<!-- Header -->
+{% block nav %}
+    {% include 'partials/header.html' %}
+{% endblock %}
+
+<!-- Breadcrumb-->
+{% block breadcrumb %}
+<ol class="breadcrumb my-4">
+    <li><a href="{% url 'new_ticket' %}"><i class="fa fa-dashboard">Ticket List</i></a></li>
+</ol>
+{% endblock %}
+
+<!-- Page content-->
+{% block  content %}
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+        {% for ticket in  tickets %}
+            <div class="post">
+                <div class="date">
+                    {{ ticket.create_at }}
+                </div>
+                <h2><a href="">{{ ticket.subject }}</a></h2>
+                <p>{{ ticket.description }}
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!-- Dashboard page -->
+{% extends "base.html" %}
+
+<!-- Page content-->
+{% block title %}Dashboard{% endblock %}
+
+<!-- Header -->
+{% block nav %}
+    {% include 'partials/header.html' %}
+{% endblock %}
+
+<!-- Breadcrumb-->
+{% block breadcrumb %}
+<ol class="breadcrumb my-4">
+    <li><a href="{% url 'dashboard' %}"><i class="fa fa-dashboard"> Dashboard</i></a></li>
+</ol>
+{% endblock %}
+
+<!-- Content html -->
+{% block  content %}
+<section class="content">
+    {% if user.is_authenticated %}
+        Hi {{ user.username }}
+        <p><a href="{% url 'new_ticket' %}">Create ticket</a></p>
+    {% endif %}
+</section>
+{% endblock content %}

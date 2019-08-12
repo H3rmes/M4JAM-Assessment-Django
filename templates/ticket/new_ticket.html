@@ -1,0 +1,37 @@
+<!-- Dashboard page -->
+{% extends "base.html" %}
+
+<!-- Page Title-->
+{% block title %}Ticket{% endblock %}
+
+<!-- Header -->
+{% block nav %}
+    {% include 'partials/header.html' %}
+{% endblock %}
+
+<!-- Breadcrumb-->
+{% block breadcrumb %}
+<ol class="breadcrumb my-4">
+    <li><a href="{% url 'new_ticket' %}"><i class="fa fa-dashboard"> Create Ticket</i></a></li>
+</ol>
+{% endblock %}
+
+<!-- Page content-->
+{% block  content %}
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <form class="ticket-form" role="form" method="POST" id="ticket_form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+<!-- Additional page related scripts-->
+{% block scripts %}
+    {% include 'partials/scripts/tinymce.html' %}
+{% endblock %}
